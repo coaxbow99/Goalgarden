@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGarden - Savings Calendar</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(cloud.jpg); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; overflow: hidden; margin: 0;">
+
+    <!-- Single, clean main card block container wrapper -->
+    <div class="welcome-container" style="max-width: 460px;">
+        <h1 class="game-title" style="font-size: 2rem;">Savings Calendar</h1>
+        <p class="game-subtitle" id="goalStatusText" style="margin-bottom: 1.5rem; color: #fffbef;">LOADING ACTIVE JOURNEY...</p>
+
+        <!-- Visual Progress Bar Element -->
+        <div class="cute-btn" style="background-color: #fffbef; box-shadow: none; cursor: default; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; justify-content: space-between; width: 100%; font-size: 0.9rem; color: #4e2b4c;">
+                <span>Total Collected:</span>
+                <span id="savingsProgressValue">₹0 / ₹0</span>
+            </div>
+            <div style="width: 100%; background-color: #e0d5e3; height: 16px; border-radius: 10px; border: 2px solid #4e2b4c; overflow: hidden; position: relative;">
+                <div id="progressBarFill" style="width: 0%; background-color: #a3e635; height: 100%; transition: width 0.5s ease;"></div>
+            </div>
+        </div>
+
+        <!-- Weekly Streak Map Element -->
+        <p style="font-family: 'DynaPuff'; font-size: 0.95rem; color: #fffbef; margin-bottom: 0.6rem; text-shadow: 2px 2px 0px #4e2b4c;">📅 THIS WEEK'S SAVING STREAK</p>
+        <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 1.5rem;">
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #a3e635; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">M</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #a3e635; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">T</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #a3e635; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">W</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #fffbef; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">T</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #fffbef; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">F</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #fffbef; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">S</div>
+            <div class="cute-btn" style="padding: 8px 0; font-size: 0.8rem; background-color: #fffbef; box-shadow: none; cursor: default; border-radius: 8px; display: flex; justify-content: center;">S</div>
+        </div>
+
+        <!-- Navigation Hub Return Element -->
+        <a href="index.html" class="cute-btn" style="background-color: #ffd6ff; width: 100%; display: flex; justify-content: center;">🔙 GO BACK TO HUB</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

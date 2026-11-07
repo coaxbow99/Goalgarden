@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGarden - Set Goal</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(cloud.jpg); background-size: cover; background-position: center; background-attachment: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; overflow: hidden; margin: 0;">
+
+    <div class="welcome-container">
+        <h1 class="game-title" style="font-size: 2rem;">Start Journey</h1>
+        <p class="game-subtitle" style="margin-bottom: 1.5rem; color: #fffbef;">WHAT ARE WE SAVING FOR?</p>
+
+        <div class="menu-buttons" style="gap: 1rem; margin-bottom: 1.5rem;">
+            <!-- Input 1: Wish Item Name -->
+            <div class="cute-btn" style="display: flex; flex-direction: column; align-items: flex-start; background-color: #fffbef; box-shadow: none; cursor: default; gap: 5px;">
+                <span style="font-size: 0.9rem; color: #6e446b;">🎁 Item Name:</span>
+                <input type="text" id="goalNameInput" placeholder="e.g., Adventure Book" style="width: 100%; border: 2px dashed #4e2b4c; border-radius: 8px; font-family: 'DynaPuff'; padding: 5px; color: #4e2b4c; font-size: 1rem; box-sizing: border-box;">
+            </div>
+            
+            <!-- Input 2: Target Price Amount -->
+            <div class="cute-btn" style="display: flex; justify-content: space-between; align-items: center; background-color: #fffbef; box-shadow: none; cursor: default;">
+                <span style="color: #4e2b4c;">💰 Target Cost:</span>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span style="font-weight: 700; color: #4e2b4c;">₹</span>
+                    <input type="number" id="goalAmountInput" placeholder="0" style="width: 90px; border: 2px dashed #4e2b4c; border-radius: 8px; font-family: 'DynaPuff'; text-align: center; color: #4e2b4c; font-size: 1rem;">
+                </div>
+            </div>
+        </div>
+
+        <!-- Plant Action Button -->
+        <button onclick="plantWishSeed()" class="cute-btn" style="background-color: #ffd6ff; width: 100%;">🌱 PLANT WISH SEED</button>
+    </div>
+
+    <!-- Script connection to track choices -->
+    <script src="script.js"></script>
+</body>
+</html>

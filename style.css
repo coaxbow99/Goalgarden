@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Applies your cute DynaPuff font to everything */
+    font-family: 'DynaPuff', cursive;
+}
+
+body {
+    /* Fullscreen background setup */
+    background-image: url('assets/cloud.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.welcome-container {
+    text-align: center;
+    /* Soft semi-transparent purple backdrop to let the off-white text pop */
+    background-color: rgba(94, 65, 96, 0.4); 
+    backdrop-filter: blur(12px);
+    padding: 3.5rem 2.5rem;
+    border-radius: 32px;
+    border: 4px solid #4e2b4c;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 16px 0px rgba(78, 43, 76, 0.25);
+}
+
+.game-title {
+    /* Pure off-white color from the reference card text */
+    color: #fffbef; 
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.2rem;
+    /* Dark silhouette shadow to give it that retro game outline look */
+    text-shadow: 
+        -3px -3px 0 #4e2b4c,  
+         3px -3px 0 #4e2b4c,
+        -3px  3px 0 #4e2b4c,
+         3px  3px 0 #4e2b4c;
+}
+
+.game-subtitle {
+    /* Soft pastel cream text */
+    color: #ffd6ff;
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 0px #4e2b4c;
+}
+
+.menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cute-btn {
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.9rem 2rem;
+    /* Asymmetrical, squishy, hand-drawn button shape */
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border: 3.5px solid #4e2b4c; 
+    text-align: center;
+    cursor: pointer;
+    /* Off-white container filling */
+    background-color: #fffbef; 
+    /* Dark text inside button for perfect contrast */
+    color: #4e2b4c;
+    box-shadow: 0 6px 0px #4e2b4c; 
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.cute-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0px #4e2b4c;
+    background-color: #fffdf2;
+}
+
+.cute-btn:active {
+    transform: translateY(6px);
+    box-shadow: 0 0px 0px #4e2b4c;
+}

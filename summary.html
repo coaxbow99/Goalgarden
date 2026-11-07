@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoalGarden - Daily Summary</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url(cloud.jpg); background-size: cover; background-position: center; background-attachment: fixed; height: 100vh; width: 100vw; display: flex; justify-content: center; align-items: center; overflow: hidden; margin: 0;">
+
+    <div class="welcome-container">
+        <h1 class="game-title" style="font-size: 2rem;">End-of-Day Summary</h1>
+        <p class="game-subtitle" style="margin-bottom: 1.5rem; color: #fffbef;">ENTER TODAY'S SCORE!</p>
+
+        <div class="menu-buttons" style="gap: 0.8rem; margin-bottom: 1.5rem;">
+            <!-- Interactive Input for Earning -->
+            <div class="cute-btn" style="display: flex; justify-content: space-between; align-items: center; background-color: #fffbef; box-shadow: none; cursor: default;">
+                <span>🪙 Earned Money</span>
+                <input type="number" id="earnedInput" placeholder="0" style="width: 80px; border: 2px dashed #4e2b4c; border-radius: 8px; font-family: 'DynaPuff'; text-align: center; color: #2e7d32; font-size: 1rem;">
+            </div>
+            
+            <!-- Interactive Input for Spending -->
+            <div class="cute-btn" style="display: flex; justify-content: space-between; align-items: center; background-color: #fffbef; box-shadow: none; cursor: default;">
+                <span>📉 Spent Money</span>
+                <input type="number" id="spentInput" placeholder="0" style="width: 80px; border: 2px dashed #4e2b4c; border-radius: 8px; font-family: 'DynaPuff'; text-align: center; color: #c62828; font-size: 1rem;">
+            </div>
+
+            <!-- Calculated Display Box -->
+            <div class="cute-btn" style="display: flex; justify-content: space-between; background-color: #ffd6ff; box-shadow: none; cursor: default;">
+                <span>✨ Net Savings</span>
+                <span id="netSavingsDisplay" style="font-weight: 700;">+ 0</span>
+            </div>
+        </div>
+
+        <!-- Triggers the saving sequence before leaving -->
+        <button onclick="saveDailyProgress()" class="cute-btn" style="background-color: #fffbef; width: 100%;">💤 SLEEP & LOG DAY</button>
+    </div>
+
+    <!-- Link the logic script file -->
+    <script src="script.js"></script>
+</body>
+</html>
