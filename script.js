@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     // ----------------------------------------------------
-    // SYSTEM 1: END OF DAY SUMMARY SCREEN LOGIC
+    // SYSTEM 1: END OF DAY SUMMARY INPUT MONITOR LOGIC
     // ----------------------------------------------------
     const earned = document.getElementById("earnedInput");
     const spent = document.getElementById("spentInput");
@@ -25,14 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // ----------------------------------------------------
-    // SYSTEM 2: CALENDAR PAGE INTERACTIVE DYNAMIC RENDER
+    // SYSTEM 2: CALENDAR DASHBOARD PROGRESS FILL LOGIC
     // ----------------------------------------------------
     const goalStatusText = document.getElementById("goalStatusText");
     const savingsProgressValue = document.getElementById("savingsProgressValue");
     const progressBarFill = document.getElementById("progressBarFill");
 
     if (goalStatusText && savingsProgressValue && progressBarFill) {
-        // Fetch active data blocks from memory
         const goalName = localStorage.getItem("savedGoalName") || "No Goal Set Yet";
         const goalCost = parseInt(localStorage.getItem("savedGoalCost")) || 0;
         const currentSaved = parseInt(localStorage.getItem("totalSavings")) || 0;
@@ -40,13 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (goalCost > 0) {
             goalStatusText.innerText = `GROWING YOUR: ${goalName.toUpperCase()} 🌱`;
             savingsProgressValue.innerText = `₹${currentSaved} / ₹${goalCost}`;
-            
-            // Calculate progress percentage
             let percentage = (currentSaved / goalCost) * 100;
-            if (percentage > 100) percentage = 100; // Keep inside cap bounds
+            if (percentage > 100) percentage = 100;
             if (percentage < 0) percentage = 0;
-
-            // Apply style transformation to fill line instantly
             progressBarFill.style.width = percentage + "%";
         } else {
             goalStatusText.innerText = "NO WISH SEED PLANTED YET!";
@@ -54,11 +49,53 @@ document.addEventListener("DOMContentLoaded", () => {
             progressBarFill.style.width = "0%";
         }
     }
+
+    // ----------------------------------------------------
+    // SYSTEM 3: INTERACTIVE CLOUD GAME ENGINE ARENA RENDER LOGIC
+    // ----------------------------------------------------
+    const gameGoalTitle = document.getElementById("gameGoalTitle");
+    const gameCurrentSaved = document.getElementById("gameCurrentSaved");
+    const gameTargetCost = document.getElementById("gameTargetCost");
+    const plantStageGraphic = document.getElementById("plantStageGraphic");
+    const plantStageLabel = document.getElementById("plantStageLabel");
+
+    if (gameGoalTitle && gameCurrentSaved && gameTargetCost && plantStageGraphic && plantStageLabel) {
+        const name = localStorage.getItem("savedGoalName") || "";
+        const cost = parseInt(localStorage.getItem("savedGoalCost")) || 0;
+        const saved = parseInt(localStorage.getItem("totalSavings")) || 0;
+
+        if (cost > 0) {
+            gameGoalTitle.innerText = `SAVING FOR: ${name.toUpperCase()}`;
+            gameCurrentSaved.innerText = `₹${saved}`;
+            gameTargetCost.innerText = `₹${cost}`;
+
+            let progressPct = (saved / cost) * 100;
+
+            // Visual plant evolution rules mapping based on financial milestones reached
+            if (progressPct >= 100) {
+                plantStageGraphic.innerText = "🌳";
+                plantStageLabel.innerText = "Fully Grown Ancient Tree! 🎉";
+            } else if (progressPct >= 75) {
+                plantStageGraphic.innerText = "🌿";
+                plantStageLabel.innerText = "Lush Leafy Bush Stage";
+            } else if (progressPct >= 40) {
+                plantStageGraphic.innerText = "🌱";
+                plantStageLabel.innerText = "Sprouting Seedling Stage";
+            } else if (progressPct >= 10) {
+                plantStageGraphic.innerText = "☀️";
+                plantStageLabel.innerText = "Seed Cracked Open Stage";
+            } else {
+                plantStageGraphic.innerText = "🤎";
+                plantStageLabel.innerText = "Planted Wish Seed in Soil";
+            }
+        } else {
+            gameGoalTitle.innerText = "NO WISH SEED PLANTED YET!";
+            plantStageGraphic.innerText = "🫙";
+            plantStageLabel.innerText = "Visit 'Start Journey' to plant a seed!";
+        }
+    }
 });
 
-// ----------------------------------------------------
-// SYSTEM 3: SET START JOURNEY GOAL FUNCTIONS
-// ----------------------------------------------------
 function plantWishSeed() {
     const itemName = document.getElementById("goalNameInput").value.trim();
     const itemCost = parseInt(document.getElementById("goalAmountInput").value) || 0;
@@ -70,15 +107,12 @@ function plantWishSeed() {
 
     localStorage.setItem("savedGoalName", itemName);
     localStorage.setItem("savedGoalCost", itemCost);
-    localStorage.setItem("totalSavings", 0); // Clear pool values to fresh setup state
+    localStorage.setItem("totalSavings", 0);
 
     alert(`Wish Seed Planted! 🌱 You are now saving up ₹${itemCost} for your "${itemName}".`);
-    window.location.href = "index.html";
+    window.location.href = "game.html";
 }
 
-// ----------------------------------------------------
-// SYSTEM 4: LOG ENTRIES SEQUENCING EXECUTOR
-// ----------------------------------------------------
 function saveDailyProgress() {
     const earnedVal = parseInt(document.getElementById("earnedInput").value) || 0;
     const spentVal = parseInt(document.getElementById("spentInput").value) || 0;
